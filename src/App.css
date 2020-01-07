@@ -1,38 +1,91 @@
-.App {
+.single-page{
+  background-image: url(images/bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: overlay;
+  background-color: rgba(0,0,0,.6);
+  position: relative;
+  height: 100%;
+}
+
+.page__content{
+  height: 100vh;
+}
+
+.page__box{
+  position: relative;
+  top: 96px;
+}
+
+.page__wrapper{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+  padding: 4rem;
+  border-radius: 4px;
+}
+
+.page__error{
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.page__alert{
+  font-size: 2rem;
+  font-weight: 300;
+  color: var(--color-white);
+  margin-bottom: 3rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.page__description{
+  font-size: 1.6rem;
+  color: var(--color-white);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.page__btn{
+  display: block;
+  width: 160px;
+  text-align: center;
+  color: var(--color-white);
+  border: none;
+  border: 1px solid var(--color-red);
+  background-color: var(--color-red);
+  padding: 1rem 0;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.45);
+  transition: .3s ease;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 1.5rem auto;
+  text-decoration: none;
 }
 
-.App-link {
-  color: #61dafb;
+.page__btn:hover{
+  background-color: #f40612;
+  color: var(--color-white);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.title{
+  color: var(--color-red);
+  font-size: 3.6rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.title--list{
+  color: var(--color-red);
+  font-size: 3.6rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 5rem 0 3rem;
+}
+
+.description{
+  text-align: center;
+  font-size: 1.8rem;
+  color: var(--color-white);
+  margin-bottom: 2.5rem;
 }

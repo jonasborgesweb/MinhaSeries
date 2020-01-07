@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 
+import './../../App.css'
+import './newSeries.css'
+
 //Importando a API
 import api from './../../Api'
 
@@ -53,18 +56,18 @@ class NewSeries extends Component{
 
     render(){
         return (
-                <section className="page">
+                <div className="page__content">
                     { this.state.redirect && <Redirect to={this.state.redirect}/>  }   
-                    <div className="center">
-                        <div className="page__content">
-                            <h1 className="title">Nova Série</h1>
-                            <form className="form">
+                        <form className="form">
+                        <h1 className="title">Nova série</h1>
+                        <p className="description">Adicione uma série que você gosta</p>
+                            <div className="form__group">
+                                <input className="form__input" type="text" ref='name' placeholder="Informe o nome da Série"/>
+                                <label className="form__label--placeholder">Informe o nome da Série</label>
+                            </div>
+                            <div className="form__row">
                                 <div className="form__group">
-                                    <label className="form__label">Nome:</label>
-                                    <input className="form__input" type="text" ref='name'/>
-                                </div>
-                                <div className="form__group">
-                                    <label className="form__label">Genero:</label>
+                                    <label className="form__label">Gênero:</label>
                                     <select className="form__select" ref='genre' >
                                         {
                                             this.state.genres.map(item => <option key={item} value={item}>{item}</option>)
@@ -73,25 +76,23 @@ class NewSeries extends Component{
                                 </div>
                                 <div className="form__group">
                                     <label className="form__label">Status:</label>
-                                    {Object
-                                        .keys(statuses).map(item => 
-                                        <div className="form__option" key={item}>
-                                            <input type="radio" className="form__radio" key={item} id={item} value={item} name="status" ref='status'/>
-                                            <label htmlFor={item}>{statuses[item]}</label>
-                                        </div>
-                                    )}
+                                    <select className="form__select" ref="status">
+                                        {Object
+                                            .keys(statuses).map(item => <option key={item} value={item}>{statuses[item]}</option>
+                                        )}
+                                    </select>
                                 </div>
-                                <div className="form__group">
-                                    <label className="form__label">Comentários:</label>
-                                    <textarea className="form__textarea" ref='comment'></textarea>
-                                </div>
-                                <div className="form__group">
-                                    <button className="form__submit" type="button" onClick={this.saveSeries}>Salvar</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </section>
+                            </div>
+                            <div className="form__group">
+                                <label className="form__label">Comentários:</label>
+                                <textarea className="form__textarea" ref='comment'></textarea>
+                            </div>
+                            <div className="form__bottom">
+                                <button className="form__submit" type="button" onClick={this.saveSeries}>Salvar</button>
+                            </div>
+                        </form>
+                    
+                </div>
             )
     }
 }

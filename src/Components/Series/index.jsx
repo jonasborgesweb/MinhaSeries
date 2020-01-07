@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import './series.css'
+
+//Importando API
 import api from '../../Api'
 
 const statuses = {
@@ -43,27 +46,40 @@ class Series extends Component{
     renderCard(series){
         return(
             <div key={series.id} className="card">
-                <p>{series.name}</p>
-                <p>{series.genre}</p>
-                <p>{statuses[series.status]}</p>
-                <Link to={'/series-edit/' + series.id}>Editar</Link>
-                <a href="#" onClick={()=>this.deleteSeries(series.id)}>Excluir</a>
+                <div className="card__group">
+                    <h2 className="card__title">{series.name}</h2>
+                </div>
+                <div className="card__row">
+                    <p className="card__text">{series.genre}</p>
+                    <p className="card__text">{statuses[series.status]}</p>
+                </div>
+                <div className="card__bottom">
+                    <Link className="card__btn--edit" to={'/series-edit/' + series.id}>Editar</Link>
+                    <button href="" className="card__btn--delete" onClick={()=>this.deleteSeries(series.id)}>Excluir</button>
+                </div>
+                
             </div>
         )
     }
 
     render(){
         return (
-            <section>
-                <h1>Series {this.props.match.params.genre}</h1>
-                {this.state.isLoading && <p>Carregando, aguarde . . .</p>}
-                {!this.state.isLoading && this.state.series.length === 0 &&
-                    <div className="Alert">Nenhuma Série Cadastrada.</div>
-                }
-                <div className="list">
-                    {!this.state.isLoading && this.state.series.map(this.renderCard)}
+            <div className="page__content">
+                <div className="page__box">
+                    <h1 className="title--list">Séries de {this.props.match.params.genre}</h1>
+                    {this.state.isLoading && <p>Carregando, aguarde . . .</p>}
+                    {!this.state.isLoading && this.state.series.length === 0 &&
+                        <div className="page__error">
+                            <p className="page__alert">Infelizmente não encontramos nenhuma série de {this.props.match.params.genre}</p>
+                            <p className="page__description">Clique para cadastrar uma nova série</p>
+                            <Link to="/newSeries" className="page__btn">Cadastrar</Link>
+                        </div>
+                    }
+                    <div className="page__wrapper">
+                        {!this.state.isLoading && this.state.series.map(this.renderCard)}
+                    </div>
                 </div>
-            </section>
+            </div>
             )
     }
 }

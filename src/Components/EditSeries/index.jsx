@@ -63,43 +63,42 @@ class EditSeries extends Component{
 
     render(){
         return (
-                <section className="page">
-                    { this.state.redirect && <Redirect to={this.state.redirect}/>  }   
-                    <div className="center">
-                        <div className="page__content">
-                            <h1 className="title">Editar Série</h1>
-                            <form className="form">
-                                <div className="form__group">
-                                    <label className="form__label">Nome:</label>
-                                    <input className="form__input" type="text" ref='name'/>
-                                </div>
-                                <div className="form__group">
-                                    <label className="form__label">Genero:</label>
-                                    <select className="form__select" ref='genre' >
-                                        {
-                                            this.state.genres.map(item => <option key={item} value={item}>{item}</option>)
-                                        }
-                                    </select>
-                                </div>
-                                <div className="form__group">
-                                    <label className="form__label">Status:</label>
-                                    <select className="form__select" ref="status">
-                                        {Object
-                                            .keys(statuses).map(item => <option key={item} value={item}>{statuses[item]}</option>
-                                        )}
-                                    </select>
-                                </div>
-                                <div className="form__group">
-                                    <label className="form__label">Comentários:</label>
-                                    <textarea className="form__textarea" ref='comment'></textarea>
-                                </div>
-                                <div className="form__group">
-                                    <button className="form__submit" type="button" onClick={this.saveSeries}>Salvar</button>
-                                </div>
-                            </form>
+                <div className="page__content">
+                { this.state.redirect && <Redirect to={this.state.redirect}/>  }  
+                    <form className="form">
+                        <h1 className="title">Editar Série</h1>
+                        <p className="description">Você está editando: {this.state.series.name}</p>
+                        <div className="form__group">
+                            <input className="form__input" type="text" ref='name' placeholder="Informe o nome da Série"/>
+                            <label className="form__label--placeholder">Informe o nome da Série</label>
                         </div>
-                    </div>
-                </section>
+                        <div className="form__row">
+                            <div className="form__group">
+                                <label className="form__label">Gênero:</label>
+                                <select className="form__select" ref='genre' >
+                                    {
+                                        this.state.genres.map(item => <option key={item} value={item}>{item}</option>)
+                                    }
+                                </select>
+                            </div>
+                            <div className="form__group">
+                                <label className="form__label">Status:</label>
+                                <select className="form__select" ref="status">
+                                    {Object
+                                        .keys(statuses).map(item => <option key={item} value={item}>{statuses[item]}</option>
+                                    )}
+                                </select>
+                            </div>
+                        </div>
+                        <div className="form__group">
+                            <label className="form__label">Comentários:</label>
+                            <textarea className="form__textarea" ref='comment'></textarea>
+                        </div>
+                        <div className="form__bottom">
+                            <button className="form__submit" type="button" onClick={this.saveSeries}>Salvar</button>
+                        </div>
+                    </form>
+                </div>
             )
     }
 }

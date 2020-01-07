@@ -1,0 +1,75 @@
+.title{
+    /* padding: 5rem 0 3rem; */
+}
+
+.card{
+    padding: 2rem;
+    border-radius: 4px;
+    background-color: rgba(0,0,0,.65);
+    box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.5);
+}
+.card__title{
+    color: var(--color-red);
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 300;
+}
+.card__row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card__text{
+    color: var(--color-gray);
+    font-size: 1.6rem;
+    font-weight: 300;
+    position: relative;
+}
+.card__text:not(:last-child){
+    margin-right: 2rem;
+}
+.card__text:first-child::before{
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 80%;
+    background-color: var(--color-gray);
+    top: 50%;
+    right: -1rem;
+    transform: translateY(-50%);
+}
+
+.card__group{
+    margin-bottom: 1rem;
+}
+
+.card__bottom{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card__btn--edit, .card__btn--delete{
+    display: block;
+    width: 100px;
+    padding: .7rem 0;
+    text-align: center;
+    border: 1px solid var(--color-red);
+    background-color: transparent;
+    color: var(--color-red);
+    padding: 1rem 0;
+    text-decoration: none;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.45);
+    transition: .3s ease;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    margin: 1.5rem .5rem;
+}
+
+.card__btn--edit:hover,.card__btn--delete:hover{
+    background-color: var(--color-red);
+    color: var(--color-white);
+}
