@@ -1,29 +1,11 @@
 {
   "series": [
     {
-      "id": 1,
-      "name": "How I met your mother",
-      "status": "watched",
-      "genre": "Comédia",
-      "comments": "Muito bom"
-    },
-    {
-      "id": 2,
-      "name": "Friends",
-      "status": "watching",
-      "genre": "Comédia",
-      "current": {
-        "episode": "01",
-        "season": "09"
-      },
-      "comments": "Bom para descontrair"
-    },
-    {
       "id": 3,
       "name": "Breaking Bad",
       "status": "watched",
       "genre": "Drama",
-      "comments": "Say My Name - melhor cena"
+      "comment": "undefined"
     },
     {
       "id": 4,
@@ -31,34 +13,6 @@
       "status": "toWatch",
       "genre": "Drama",
       "comments": "Galera fala bem"
-    },
-    {
-      "name": "teste",
-      "status": "toWatch",
-      "genre": "Comédia",
-      "comment": "teste",
-      "id": 7
-    },
-    {
-      "name": "Teste",
-      "status": "toWatch",
-      "genre": "Ação",
-      "comment": "Teste Acai",
-      "id": 8
-    },
-    {
-      "name": "Teste",
-      "status": "toWatch",
-      "genre": "Ação",
-      "comment": "Teste acao",
-      "id": 9
-    },
-    {
-      "name": "Teste Drama",
-      "status": "toWatch",
-      "genre": "Drama",
-      "comment": "Comment Teste Drama",
-      "id": 10
     }
   ],
   "genres": [
