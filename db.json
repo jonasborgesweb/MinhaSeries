@@ -1,5 +1,5 @@
 {
-  "series":[
+  "series": [
     {
       "id": 1,
       "name": "How I met your mother",
@@ -12,7 +12,7 @@
       "name": "Friends",
       "status": "watching",
       "genre": "Comédia",
-      "current":{
+      "current": {
         "episode": "01",
         "season": "09"
       },
@@ -31,9 +31,39 @@
       "status": "toWatch",
       "genre": "Drama",
       "comments": "Galera fala bem"
+    },
+    {
+      "name": "teste",
+      "status": "toWatch",
+      "genre": "Comédia",
+      "comment": "teste",
+      "id": 7
+    },
+    {
+      "name": "Teste",
+      "status": "toWatch",
+      "genre": "Ação",
+      "comment": "Teste Acai",
+      "id": 8
+    },
+    {
+      "name": "Teste",
+      "status": "toWatch",
+      "genre": "Ação",
+      "comment": "Teste acao",
+      "id": 9
+    },
+    {
+      "name": "Teste Drama",
+      "status": "toWatch",
+      "genre": "Drama",
+      "comment": "Comment Teste Drama",
+      "id": 10
     }
   ],
-  "genres":[
-    "Comédia", "Drama", "Ação"
+  "genres": [
+    "Comédia",
+    "Drama",
+    "Ação"
   ]
 }

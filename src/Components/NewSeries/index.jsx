@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Redirect } from 'react-router-dom'
 
 //Importando a API
 import api from './../../Api'
@@ -15,7 +16,8 @@ class NewSeries extends Component{
 
         this.state = {
             genres:[],
-            isLoading: false
+            isLoading: false,
+            redirect: false
         }
 
         this.saveSeries = this.saveSeries.bind(this)
@@ -33,17 +35,26 @@ class NewSeries extends Component{
     }
 
     saveSeries(){
+        
         const newSeries = {
             name: this.refs.name.value,
             status: this.refs.status.value,
             genre: this.refs.genre.value,
             comment: this.refs.comment.value
         }
+
+        api.saveSeries(newSeries)
+            .then((res) =>{
+                this.setState({
+                    redirect: '/series/' + this.refs.genre.value
+                })
+            })
     }
 
     render(){
         return (
                 <section className="page">
+                    { this.state.redirect && <Redirect to={this.state.redirect}/>  }   
                     <div className="center">
                         <div className="page__content">
                             <h1 className="title">Nova Série</h1>
@@ -75,7 +86,7 @@ class NewSeries extends Component{
                                     <textarea className="form__textarea" ref='comment'></textarea>
                                 </div>
                                 <div className="form__group">
-                                    <button className="form__submit" type="button" onClick={this.saveSiries}>Salvar</button>
+                                    <button className="form__submit" type="button" onClick={this.saveSeries}>Salvar</button>
                                 </div>
                             </form>
                         </div>

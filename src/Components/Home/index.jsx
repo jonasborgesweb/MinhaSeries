@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 //Importando a API
 import api from './../../Api'
 
@@ -24,9 +25,9 @@ class Home extends Component{
             )
     }
     
-    renderGenreLink(genres){
+    renderGenreLink(genre){
         return (
-          <a href="">{genres}</a>
+          <Link to={`/series/${genre}`}>{genre}</Link>
         )
     }
 
