@@ -35,16 +35,6 @@ json-server --watch db.json --port 3001
 yarn start
 ```
 
-
-## Comandos Importantes
-- Instalar Json-Server
-
-
-- Iniciar o Banco
-````
-json-server --watch db.json --port 3001
-````
-
 ### Autor
 Jonas Borges - Desenvolvedor Front End
 
