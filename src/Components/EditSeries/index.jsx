@@ -50,7 +50,7 @@ class EditSeries extends Component{
             name: this.refs.name.value,
             status: this.refs.status.value,
             genre: this.refs.genre.value,
-            comment: this.refs.comment.value
+            comments: this.refs.comment.value
         }
 
         api.updateSeries(newSeries)
